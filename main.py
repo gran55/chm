@@ -64,19 +64,19 @@ while run:
             elif e.key == pygame.K_BACKSPACE:
                 numeral = numeral[:-1]
             elif e.key == pygame.K_RETURN and numeral:
-                 if int(numeral) >300:
+                if int(numeral) >300:
                      dialogs('', OUTSIDE_BG, 'Вы ошиблись')  
-                 elif int(numeral) > num:   
+                if int(numeral) > num:   
                      dialogs('', OUTSIDE_BG, 'IQ меньше')  
-                 elif int(numeral) < num:
+                if int(numeral) < num:
                      dialogs('', OUTSIDE_BG, 'IQ больше')
-            if move == 1:
+                if move == 1:
                     if int(numeral) == num:
                         dialogs('Это IQ {numeral}', dialog_cat_pos, 'Вы выйграли')
                         block = 1
                     else:
                         dialogs('Дог твой ход', dialog_cat_pos, 'Продолжаем') 
-            if move == 2:
+                if move == 2:
                     if int(numeral) == num:
                         dialogs(f'Это IQ {numeral}', dialog_dog_pos, 'Вы выйграли')
                         block = 1
@@ -84,24 +84,24 @@ while run:
                         dialogs('Дог твой ход', dialog_dog_pos, 'Продолжаем') 
             numeral = ''
             move += 1  
-            if move >2:
+            if move > 2:
                move = 1
 
 
     if block == 0:
-       screen.blit(bg, bg_rect)
-       screen.blit(cat, cat_rect)
-       screen.blit(dog, dog_rect)
-       screen.blit(owl, owl_rect)
-       screen.blit(font_box, font_rect)
-       font_box.fill(SILVER)
-       font_box.blit(font.render(numeral, True, BLACK), (10, 0))
-       pygame.display.update()
-       pygame.time.wait(2000)
+        screen.blit(bg, bg_rect)
+        screen.blit(cat, cat_rect)
+        screen.blit(dog, dog_rect)
+        screen.blit(owl, owl_rect)
+        screen.blit(font_box, font_rect)
+        font_box.fill(SILVER)
+        font_box.blit(font.render(numeral, True, BLACK), (10, 0))
+        pygame.display.update()
+       
     
     if start == 1:
-       dialogs('', OUTSIDE_BG, 'Угадай твой IQ')
-       dialogs('', OUTSIDE_BG, 'От 3 до 300')
-       dialogs('', dialog_dog_pos, 'Угадай сколько')
-       dialogs('', dialog_cat_pos, 'Угадай сколько')
-       start = 0
+        dialogs('', OUTSIDE_BG, 'Угадай твой IQ')
+        dialogs('', OUTSIDE_BG, 'От 3 до 300')
+        dialogs('', dialog_dog_pos, 'Угадай сколько')
+        dialogs('', dialog_cat_pos, 'Угадай сколько')
+        start = 0
